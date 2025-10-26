@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="setup-screen" class="setup">
+    <h1>Tic Tac Toe</h1>
+    <p>Masukkan nama pemain:</p>
+    <input id="playerX" placeholder="Nama pemain X">
+    <input id="playerO" placeholder="Nama pemain O">
+    <button id="startBtn">Mulai</button>
+  </div>
+
+  <div id="game-screen" class="hidden">
+    <h2 id="turnText">Giliran: X</h2>
+
+    <div id="board" class="board"></div>
+
+    <div class="scores">
+      <p><span id="nameX">X</span>: <span id="scoreX">0</span></p>
+      <p>Seri: <span id="scoreDraw">0</span></p>
+      <p><span id="nameO">O</span>: <span id="scoreO">0</span></p>
+    </div>
+
+    <div class="buttons">
+      <button id="nextRoundBtn">Lanjutkan</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <div id="customAlert" class="custom-alert hidden">
+    <div class="alert-box">
+      <p id="alertMessage"></p>
+      <button id="alertOkBtn">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

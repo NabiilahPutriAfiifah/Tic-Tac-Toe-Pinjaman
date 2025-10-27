@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinjaman AdaGaada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Pinjaman AdaGaada</h1>
+  <p>Hitung estimasi cicilan dan total pembayaran kamu!</p>
+
+  <div class="container">
+    <label for="jumlah">Jumlah Pinjaman (Rp):</label><br>
+    <input type="number" id="jumlah" placeholder="Masukkan jumlah pinjaman"><br><br>
+
+    <label for="bulan">Lama Pinjaman:</label><br>
+    <select id="bulan">
+      <option value="1">1 Bulan</option>
+      <option value="3">3 Bulan</option>
+      <option value="6">6 Bulan</option>
+      <option value="12">12 Bulan</option>
+      <option value="24">24 Bulan</option>
+    </select><br><br>
+
+    <label for="bunga">Bunga per tahun (%):</label><br>
+    <input type="number" id="bunga" value="10"><br><br>
+
+    <button onclick="hitungPinjaman()">Hitung</button>
+
+    <div id="hasil" class="hasil"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

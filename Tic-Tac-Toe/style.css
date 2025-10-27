@@ -64,7 +64,7 @@ button:hover {
 }
 
 .cell:disabled {
-  background: #eee;
+  background: #3d8cd2;
   cursor: not-allowed;
 }
 

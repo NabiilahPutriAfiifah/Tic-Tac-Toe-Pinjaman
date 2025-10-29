@@ -8,20 +8,25 @@ function hitungPinjaman() {
     return;
   }
 
-  const bungaBulanan = bungaTahunan / 100 / 12;
-  const cicilanBulanan = (jumlah * bungaBulanan) / (1 - Math.pow(1 + bungaBulanan, -bulan));
-  const totalBayar = cicilanBulanan * bulan;
-  const totalBunga = totalBayar - jumlah;
+  const r = bungaTahunan / 100 / 12;
+  const n = bulan;
+  const P = jumlah;
 
-  const formatRupiah = (angka) => angka.toLocaleString("id-ID", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const EMI = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+  const totalBayar = EMI * n;
+  const totalBunga = totalBayar - P;
+
+  const formatRupiah = (angka) =>
+    angka.toLocaleString("id-ID", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   document.getElementById("hasil").innerHTML = `
     <p><strong>Rincian Pinjaman:</strong></p>
-    <p>Jumlah Pinjaman: Rp ${formatRupiah(jumlah)}</p>
-    <p>Lama Pinjaman: ${bulan} bulan</p>
+    <p>Jumlah Pinjaman: Rp ${formatRupiah(P)}</p>
+    <p>Lama Pinjaman: ${n} bulan</p>
     <p>Bunga per tahun: ${bungaTahunan}%</p>
     <hr>
-    <p><strong>Cicilan per bulan:</strong> Rp ${formatRupiah(cicilanBulanan)}</p>
+    <p><strong>Cicilan per bulan:</strong> Rp ${formatRupiah(EMI)}</p>
     <p><strong>Total yang dibayar:</strong> Rp ${formatRupiah(totalBayar)}</p>
     <p><strong>Total bunga:</strong> Rp ${formatRupiah(totalBunga)}</p>
   `;
